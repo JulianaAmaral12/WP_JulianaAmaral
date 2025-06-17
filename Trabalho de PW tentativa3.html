@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recanto dos Sonhos - Confeitaria Artesanal</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    :root {
+      --rosa-claro: #FFEAEA;
+      --rosa-medio: #FFCECE;
+      --rosa-escuro: #F8A8A8;
+      --destaque: #FF9E9E;
+      --texto: #5E3A3A;
+    }
+    
+    body {
+      background-color: var(--rosa-claro);
+      font-family: 'Comic Neue', cursive, sans-serif;
+      color: var(--texto);
+    }
+    
+    .topbar {
+      background-color: var(--rosa-escuro);
+      padding: 8px 0;
+      font-size: 0.9rem;
+    }
+    
+    .topbar a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+      transition: all 0.3s;
+    }
+    
+    .topbar a:hover {
+      color: var(--destaque);
+    }
+    
+    .navbar {
+      background-color: white;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    .nav-link {
+      color: var(--texto) !important;
+      font-weight: 500;
+      margin: 0 10px;
+      position: relative;
+    }
+    
+    .nav-link:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background: var(--destaque);
+      bottom: 0;
+      left: 0;
+      transition: width 0.3s;
+    }
+    
+    .nav-link:hover:after {
+      width: 100%;
+    }
+    
+    .hero {
+      height: 70vh;
+      min-height: 500px;
+      background-color: var(--rosa-medio);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+    
+    .content {
+      background-color: white;
+      padding: 60px 0;
+    }
+    
+    h2 {
+      color: var(--destaque);
+      font-weight: 700;
+      margin-bottom: 30px;
+      position: relative;
+      display: inline-block;
+    }
+    
+    h2:after {
+      content: '';
+      position: absolute;
+      width: 50%;
+      height: 3px;
+      background: var(--destaque);
+      bottom: -10px;
+      left: 0;
+    }
+    
+    .carousel-item img {
+      height: 400px;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    
+    .carousel-control-prev, .carousel-control-next {
+      width: 5%;
+    }
+    
+    .founders img {
+      border-radius: 50%;
+      border: 5px solid var(--rosa-medio);
+      margin-bottom: 15px;
+    }
+    
+    .footer {
+      background-color: var(--rosa-escuro);
+      color: white;
+      padding: 40px 0;
+    }
+    
+    .footer a {
+      color: white;
+      margin: 0 15px;
+      font-size: 1.2rem;
+    }
+    
+    .footer a:hover {
+      color: var(--destaque);
+    }
+    
+    .social-icons {
+      margin: 20px 0;
+    }
+    
+    .btn-primary {
+      background-color: var(--destaque);
+      border-color: var(--destaque);
+    }
+    
+    .btn-primary:hover {
+      background-color: var(--rosa-escuro);
+      border-color: var(--rosa-escuro);
+    }
+  </style>
+</head>
+<body>
+  <!-- Topbar -->
+  <div class="topbar text-center">
+    <span>📞 (11) 1234-5678 | 📧 contato@recantodossonhos.com | 
+      <a href="#"><i class="fab fa-instagram"></i> Instagram</a> | <a href="#"><i class="fab fa-facebook"></i> Facebook</a>
+    </span>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="imagem da logo.webp" alt="Recanto dos Sonhos" height="60">
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="Trabalho de PW tentativa3.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="cardápio pw.html">Cardápio</a></li>
+          <li class="nav-item">
+            <a class="nav-link" href="carrinho pw.html">
+              <i class="fas fa-shopping-cart"></i> Carrinho
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <img src="images/hero-confeitaria.jpg" alt="Deliciosos doces artesanais">
+    <div class="hero-text text-center position-absolute text-white">
+      <h1 class="display-3 fw-bold">Doces que realizam sonhos</h1>
+      <p class="lead">Confeitaria artesanal desde 1950</p>
+      <a href="cardapio.html" class="btn btn-primary btn-lg mt-3">Conheça nossos produtos</a>
+    </div>
+  </section>
+
+  <!-- Conteúdo -->
+  <main class="content">
+    <div class="container">
+      <section id="sobre" class="mb-5 py-5">
+        <h2>Nossa História</h2>
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <p class="lead">Em 1944, no Bom Retiro (SP), os irmãos Roberto e Marcela Oliveira transformaram a paixão da família por doces em uma confeitaria. Começaram no fundo de casa, usando formas herdadas e criatividade para vencer a escassez da guerra. Marcela, artista, desenhava embalagens e inventava receitas, enquanto Roberto dominava as técnicas. Em 1950, inauguraram a Confeitaria Recanto dos Sonhos, que resistiu a crises, adaptou-se aos tempos e hoje, comandada pela bisneta Clara, mantém viva a tradição — do caderno de receitas manchado ao "Pudim da Saudade", cujo segredo nunca foi revelado.</p>
+           
+          </div>
+          <div class="col-lg-6 text-center">
+            <img src="ChatGPT Image 18 de mai. de 2025, 14_03_43.png" alt="Nossa cozinha" class="img-fluid rounded shadow" width="400" >
+          </div>
+        </div>
+        
+        <div class="row mt-5 text-center">
+          <div class="col-md-6 founders">
+            <img src="fundador Loja.webp" alt="Fundador Roberto" width="200">
+            <h4>Roberto</h4>
+            <p>Roberto Oliveira, filho de um marceneiro português e uma doceira paulista, fundou em 1944 a Doçaria Oliveira com sua irmã Marcela, usando recursos simples. Destaques:
+
+              Criou o "Bolo da Vitória" (1946) no pós-guerra
+
+              Transformou o negócio na Confeitaria Recanto dos Sonhos (1950), com heranças familiares como móveis e o piano da mãe
+
+              Marcela inovou com o "Cartão-Doce", enquanto o pai esculpia formas de madeira
+
+              Legado: Até hoje, a loja mantém receitas originais e tradições, como o "Bolo da Vovó Anorinda", simbolizando décadas de história e afeto.</p>
+           </div>
+          <div class="col-md-6 founders">
+            <img src="fundadora loja.png" alt="Fundadora Marcela" width="200">
+            <h4>Marcela</h4>
+            <p>Filha de artesãos, uniu arte e confeitaria na Doçaria Oliveira (1944). 
+              Criou embalagens artesanais, receitas poéticas como o "Pudim da Saudade" e o inovador "Cartão-Doce". 
+              Co-fundadora da Confeitaria Recanto dos Sonhos (1950), transformou doces em expressão artística. 
+              Seu legado permanece em cadernos ilustrados e tradições mantidas até hoje. </p>
+        </div>
+        </div>
+      </section>
+
+      <!-- Carrossel de Produtos -->
+      <section id="cardapio" class="mb-5 py-5">
+        <h2>Nossas Delícias</h2>
+        <div id="carouselFotos" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="bolo de casamento.png" class="d-block w-100" alt="Bolo de Casamento">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Bolos de Casamento</h5>
+                <p>Personalizados para o seu grande dia</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="docinhos.png" class="d-block w-100" alt="Docinhos">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Doces Finos</h5>
+                <p>Para eventos sofisticados</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="bolo de 15 anos.png" class="d-block w-100" alt="Bolos de Aniversário">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Bolos de Aniversário</h5>
+                <p>Temáticos e personalizados</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="sobremesas.png" class="d-block w-100" alt="Sobremesas">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Sobremesas</h5>
+                <p>Para todos os gostos</p>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselFotos" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselFotos" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          </button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h5>Recanto dos Sonhos</h5>
+          <p>Confeitaria artesanal que transforma momentos em memórias doces desde 1950.</p>
+        </div>
+        <div class="col-md-4 text-center">
+          <h5>Contato</h5>
+          <p>📞 (11) 1234-5678</p>
+          <p>📧 contato@recantodossonhos.com</p>
+          <p>📍 Rua dos Doces, 123 - Centro</p>
+        </div>
+        <div class="col-md-4 text-end">
+          <h5>Siga-nos</h5>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-instagram fa-2x"></i></a>
+            <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
+            <a href="#"><i class="fab fa-whatsapp fa-2x"></i></a>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="text-center">
+        <p>&copy; 2025 Recanto dos Sonhos - Todos os direitos reservados</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+</body>
+</html>
