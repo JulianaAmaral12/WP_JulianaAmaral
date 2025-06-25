@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrinho - Recanto dos Sonhos</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    :root {
+      --rosa-claro: #FFEAEA;
+      --rosa-medio: #FFCECE;
+      --rosa-escuro: #F8A8A8;
+      --destaque: #FF9E9E;
+      --texto: #5E3A3A;
+    }
+    
+    body {
+      background-color: var(--rosa-claro);
+      font-family: 'Comic Neue', cursive, sans-serif;
+      color: var(--texto);
+    }
+    
+    .topbar {
+      background-color: var(--rosa-escuro);
+      padding: 8px 0;
+      font-size: 0.9rem;
+    }
+    
+    .topbar a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+      transition: all 0.3s;
+    }
+    
+    .navbar {
+      background-color: white;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    .carrinho-container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 30px;
+      background-color: white;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+    
+    .produto {
+      display: flex;
+      align-items: center;
+      padding: 15px 0;
+      border-bottom: 1px dashed var(--rosa-medio);
+    }
+    
+    .produto-imagem {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-right: 20px;
+      border: 2px solid var(--rosa-medio);
+    }
+    
+    .produto-info {
+      flex-grow: 1;
+    }
+    
+    .produto-nome {
+      font-weight: 600;
+      color: var(--destaque);
+      margin-bottom: 5px;
+    }
+    
+    .produto-preco {
+      font-weight: 700;
+    }
+    
+    .quantidade {
+      display: flex;
+      align-items: center;
+      margin: 0 20px;
+    }
+    
+    .quantidade-btn {
+      background: var(--rosa-medio);
+      border: none;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      color: white;
+      font-weight: bold;
+    }
+    
+    .quantidade-num {
+      margin: 0 10px;
+      min-width: 20px;
+      text-align: center;
+    }
+    
+    .remover {
+      color: var(--rosa-escuro);
+      background: none;
+      border: none;
+      font-size: 1.2rem;
+    }
+    
+    .total {
+      background: var(--rosa-claro);
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 30px;
+      text-align: right;
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+    
+    .btn-finalizar {
+      background: var(--destaque);
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 50px;
+      font-weight: 600;
+      margin-top: 20px;
+      width: 100%;
+      transition: all 0.3s;
+    }
+    
+    .btn-finalizar:hover {
+      background: var(--rosa-escuro);
+      transform: translateY(-2px);
+    }
+    
+    .carrinho-vazio {
+      text-align: center;
+      padding: 50px 0;
+      color: var(--destaque);
+    }
+    
+    .carrinho-vazio i {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Topbar -->
+  <div class="topbar text-center">
+    <span>📞 (11) 1234-5678 | 📧 contato@recantodossonhos.com | 
+      <a href="#"><i class="fab fa-instagram"></i> Instagram</a> | <a href="#"><i class="fab fa-facebook"></i> Facebook</a>
+    </span>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="imagem da logo.webp" alt="Recanto dos Sonhos" height="60">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+           <li class="nav-item"><a class="nav-link" href="Trabalho de PW tentativa3.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="cardápio pw.html">Cardápio</a></li>
+          <li class="nav-item">
+            <a class="nav-link" href="carrinho pw.html">
+              <i class="fas fa-shopping-cart"></i> Carrinho
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Carrinho -->
+  <div class="container my-5">
+    <div class="carrinho-container">
+      <h2 class="mb-4"><i class="fas fa-shopping-cart"></i> Seu Carrinho</h2>
+      
+      <div id="lista-produtos">
+        <!-- Produtos serão inseridos aqui pelo JavaScript -->
+      </div>
+      
+      <div id="carrinho-vazio" class="carrinho-vazio" style="display: none;">
+        <i class="fas fa-cookie-bite"></i>
+        <h3>Seu carrinho está vazio</h3>
+        <p>Volte à loja e adicione doces deliciosos!</p>
+        <a href="index.html#cardapio" class="btn btn-finalizar">Ver Cardápio</a>
+      </div>
+      
+      <div class="total">
+        Total: <span id="total-carrinho">R$ 0,00</span>
+      </div>
+      
+      <button id="btn-finalizar" class="btn-finalizar" disabled>Finalizar Compra</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h5>Recanto dos Sonhos</h5>
+          <p>Confeitaria artesanal que transforma momentos em memórias doces desde 1950.</p>
+        </div>
+        <div class="col-md-4 text-center">
+          <h5>Contato</h5>
+          <p>📞 (11) 1234-5678</p>
+          <p>📧 contato@recantodossonhos.com</p>
+          <p>📍 Rua dos Doces, 123 - Centro</p>
+        </div>
+        <div class="col-md-4 text-end">
+          <h5>Siga-nos</h5>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-instagram fa-2x"></i></a>
+            <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
+            <a href="#"><i class="fab fa-whatsapp fa-2x"></i></a>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="text-center">
+        <p>&copy; 2025 Recanto dos Sonhos - Todos os direitos reservados</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+  
+  <script>
+    // Produtos do Recanto dos Sonhos (pode ser substituído por dados dinâmicos)
+    const produtos = [
+      { 
+        id: 1, 
+        nome: "Bolo de Casamento", 
+        preco: 450.00, 
+        imagem: "bolo de casamento.png",
+        descricao: "Personalizado para o seu grande dia"
+      },
+      { 
+        id: 2, 
+        nome: "Doces Finos", 
+        preco: 3.50, 
+        imagem: "docinhos.png",
+        descricao: "Caixa com 50 unidades"
+      },
+      { 
+        id: 3, 
+        nome: "Bolo de Aniversário", 
+        preco: 180.00, 
+        imagem: "bolo de 15 anos.png",
+        descricao: "Temático e personalizado"
+      },
+      { 
+        id: 4, 
+        nome: "Sobremesas", 
+        preco: 25.00, 
+        imagem: "sobremesas.png",
+        descricao: "Variadas para todos os gostos"
+      }
+    ];
+
+    // Carrinho (pode ser carregado do localStorage)
+    let carrinho = [
+      { id: 1, quantidade: 1 },
+      { id: 3, quantidade: 2 }
+    ];
+
+    // Função para carregar os produtos no carrinho
+    function carregarCarrinho() {
+      const listaProdutos = document.getElementById('lista-produtos');
+      const carrinhoVazio = document.getElementById('carrinho-vazio');
+      const btnFinalizar = document.getElementById('btn-finalizar');
+      let total = 0;
+      
+      listaProdutos.innerHTML = '';
+      
+      if (carrinho.length === 0) {
+        listaProdutos.style.display = 'none';
+        carrinhoVazio.style.display = 'block';
+        btnFinalizar.disabled = true;
+        return;
+      } else {
+        listaProdutos.style.display = 'block';
+        carrinhoVazio.style.display = 'none';
+        btnFinalizar.disabled = false;
+      }
+      
+      carrinho.forEach(item => {
+        const produto = produtos.find(p => p.id === item.id);
+        if (produto) {
+          const subtotal = produto.preco * item.quantidade;
+          total += subtotal;
+          
+          listaProdutos.innerHTML += `
+            <div class="produto">
+              <img src="${produto.imagem}" alt="${produto.nome}" class="produto-imagem">
+              <div class="produto-info">
+                <div class="produto-nome">${produto.nome}</div>
+                <div class="produto-descricao">${produto.descricao}</div>
+              </div>
+              <div class="quantidade">
+                <button class="quantidade-btn" onclick="alterarQuantidade(${produto.id}, -1)">-</button>
+                <span class="quantidade-num">${item.quantidade}</span>
+                <button class="quantidade-btn" onclick="alterarQuantidade(${produto.id}, 1)">+</button>
+              </div>
+              <div class="produto-preco">R$ ${subtotal.toFixed(2)}</div>
+              <button class="remover" onclick="removerProduto(${produto.id})">
+                <i class="fas fa-times"></i>
+              </button>
+            </div>
+          `;
+        }
+      });
+      
+      document.getElementById('total-carrinho').textContent = `R$ ${total.toFixed(2)}`;
+    }
+
+    // Funções para manipular o carrinho
+    function alterarQuantidade(id, delta) {
+      const item = carrinho.find(item => item.id === id);
+      if (item) {
+        item.quantidade += delta;
+        if (item.quantidade <= 0) {
+          carrinho = carrinho.filter(item => item.id !== id);
+        }
+        carregarCarrinho();
+      }
+    }
+
+    function removerProduto(id) {
+      carrinho = carrinho.filter(item => item.id !== id);
+      carregarCarrinho();
+    }
+
+    // Carrega o carrinho quando a página é aberta
+    window.onload = carregarCarrinho;
+  </script>
+</body>
+</html>

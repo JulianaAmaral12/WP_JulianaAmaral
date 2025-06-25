@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cardápio - Recanto dos Sonhos</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    :root {
+      --rosa-claro: #FFEAEA;
+      --rosa-medio: #FFCECE;
+      --rosa-escuro: #F8A8A8;
+      --destaque: #FF9E9E;
+      --texto: #5E3A3A;
+    }
+    
+    body {
+      background-color: var(--rosa-claro);
+      font-family: 'Comic Neue', cursive, sans-serif;
+      color: var(--texto);
+    }
+    
+    .topbar {
+      background-color: var(--rosa-escuro);
+      padding: 8px 0;
+      font-size: 0.9rem;
+    }
+    
+    .topbar a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+      transition: all 0.3s;
+    }
+    
+    .navbar {
+      background-color: white;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    .cardapio-container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 30px;
+      background-color: white;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+    
+    .categoria {
+      margin-bottom: 50px;
+    }
+    
+    .categoria-titulo {
+      color: var(--destaque);
+      font-weight: 700;
+      margin-bottom: 30px;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .categoria-titulo:after {
+      content: '';
+      position: absolute;
+      width: 50%;
+      height: 3px;
+      background: var(--destaque);
+      bottom: -10px;
+      left: 0;
+    }
+    
+    .card-produto {
+      border: none;
+      border-radius: 15px;
+      overflow: hidden;
+      margin-bottom: 25px;
+      transition: all 0.3s;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+    
+    .card-produto:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+    
+    .card-img-top {
+      height: 200px;
+      object-fit: cover;
+    }
+    
+    .card-body {
+      padding: 20px;
+    }
+    
+    .produto-nome {
+      color: var(--destaque);
+      font-weight: 700;
+    }
+    
+    .produto-preco {
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--texto);
+    }
+    
+    .btn-adicionar {
+      background-color: var(--destaque);
+      border: none;
+      border-radius: 50px;
+      padding: 8px 20px;
+      color: white;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+    
+    .btn-adicionar:hover {
+      background-color: var(--rosa-escuro);
+    }
+    
+    .footer {
+      background-color: var(--rosa-escuro);
+      color: white;
+      padding: 40px 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- Topbar -->
+  <div class="topbar text-center">
+    <span>📞 (11) 1234-5678 | 📧 contato@recantodossonhos.com | 
+      <a href="#"><i class="fab fa-instagram"></i> Instagram</a> | <a href="#"><i class="fab fa-facebook"></i> Facebook</a>
+    </span>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="imagem da logo.webp" alt="Recanto dos Sonhos" height="60">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="Trabalho de PW tentativa3.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="cardápio pw.html">Cardápio</a></li>
+          <li class="nav-item">
+            <a class="nav-link" href="carrinho pw.html">
+              <i class="fas fa-shopping-cart"></i> Carrinho
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Cardápio -->
+  <div class="cardapio-container">
+    <h1 class="text-center mb-5"><i class="fas fa-utensils"></i> Nosso Cardápio</h1>
+    
+    <!-- Bolos -->
+    <div class="categoria">
+      <h2 class="categoria-titulo">Bolos</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card card-produto">
+            <img src="bolo de casamento.png" class="card-img-top" alt="Bolo de Casamento">
+            <div class="card-body">
+              <h3 class="produto-nome">Bolo de Casamento</h3>
+              <p class="card-text">Camadas de massa branca com recheio de frutas vermelhas e creme de baunilha.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="produto-preco">R$ 450,00</span>
+                <button class="btn btn-adicionar">Adicionar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="card card-produto">
+            <img src="bolo de 15 anos.png" class="card-img-top" alt="Bolo de Aniversário">
+            <div class="card-body">
+              <h3 class="produto-nome">Bolo de Aniversário</h3>
+              <p class="card-text">Personalizado com tema escolhido pelo cliente, diversos sabores disponíveis.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="produto-preco">R$ 180,00</span>
+                <button class="btn btn-adicionar">Adicionar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="card card-produto">
+            <img src="bolo premium.png" class="card-img-top" alt="Bolo Premium">
+            <div class="card-body">
+              <h3 class="produto-nome">Bolo Premium</h3>
+              <p class="card-text">Chocolate belga com recheio de ganache e morangos frescos.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="produto-preco">R$ 220,00</span>
+                <button class="btn btn-adicionar">Adicionar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Doces -->
+    <div class="categoria">
+      <h2 class="categoria-titulo">Doces Finos</h2>
+      <div class="row">
+        <div class="col-md-3">
+          <div class="card card-produto">
+            <img src="docinhos.png" class="card-img-top" alt="Brigadeiros">
+            <div class="card-body">
+              <h3 class="produto-nome">Brigadeiros Gourmet</h3>
+              <p class="card-text">Caixa com 30 unidades - diversos sabores.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="produto-preco">R$ 90,00</span>
+                <button class="btn btn-adicionar">Adicionar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-3">
+          <div class="card card-produto">
+            <img src="beijinho pw.png" class="card-img-top" alt="Beijinhos">
+            <div class="card-body">
+              <h3 class="produto-nome">Beijinhos Especiais</h3>
+              <p class="card-text">Caixa com 30 unidades - coco queimado com leite condensado caseiro.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="produto-preco">R$ 85,00</span>
+                <button class="btn btn-adicionar">Adicionar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-3">
+          <div class="card card-produto">
+            <img src="macarrons pw.png" class="card-img-top" alt="Macarons">
+            <div class="card-body">
+              <h3 class="produto-nome">Macarons</h3>
+              <p class="card-text">Caixa com 12 unidades - sabores variados.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="produto-preco">R$ 120,00</span>
+                <button class="btn btn-adicionar">Adicionar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-3">
+          <div class="card card-produto">
+            <img src="cupcake pw.png" class="card-img-top" alt="Cupcakes">
+            <div class="card-body">
+              <h3 class="produto-nome">Cupcakes</h3>
+              <p class="card-text">Kit com 6 unidades - diversos sabores e coberturas.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="produto-preco">R$ 75,00</span>
+                <button class="btn btn-adicionar">Adicionar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Sobremesas -->
+    <div class="categoria">
+      <h2 class="categoria-titulo">Sobremesas</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card card-produto">
+            <img src="sobremesas.png" class="card-img-top" alt="Mousse de Maracujá">
+            <div class="card-body">
+              <h3 class="produto-nome">Mousse de Maracujá</h3>
+              <p class="card-text">Creme leve com calda de maracujá natural - porção individual.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="produto-preco">R$ 25,00</span>
+                <button class="btn btn-adicionar">Adicionar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="card card-produto">
+            <img src="cheesecake pw.png" class="card-img-top" alt="Cheesecake">
+            <div class="card-body">
+              <h3 class="produto-nome">Cheesecake de Frutas</h3>
+              <p class="card-text">Base crocante com creme de ricota e frutas frescas da estação.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="produto-preco">R$ 35,00</span>
+                <button class="btn btn-adicionar">Adicionar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="card card-produto">
+            <img src="pudim pw.jpeg" class="card-img-top" alt="Pudim">
+            <div class="card-body">
+              <h3 class="produto-nome">Pudim da Saudade</h3>
+              <p class="card-text">Receita tradicional da família - porção individual.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="produto-preco">R$ 22,00</span>
+                <button class="btn btn-adicionar">Adicionar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h5>Recanto dos Sonhos</h5>
+          <p>Confeitaria artesanal que transforma momentos em memórias doces desde 1950.</p>
+        </div>
+        <div class="col-md-4 text-center">
+          <h5>Contato</h5>
+          <p>📞 (11) 1234-5678</p>
+          <p>📧 contato@recantodossonhos.com</p>
+          <p>📍 Rua dos Doces, 123 - Centro</p>
+        </div>
+        <div class="col-md-4 text-end">
+          <h5>Siga-nos</h5>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-instagram fa-2x"></i></a>
+            <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
+            <a href="#"><i class="fab fa-whatsapp fa-2x"></i></a>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="text-center">
+        <p>&copy; 2025 Recanto dos Sonhos - Todos os direitos reservados</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+  
+  <script>
+    // Função para adicionar produtos ao carrinho (pode ser integrada com o carrinho.html)
+    document.querySelectorAll('.btn-adicionar').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const card = this.closest('.card');
+        const nome = card.querySelector('.produto-nome').textContent;
+        const preco = card.querySelector('.produto-preco').textContent;
+        
+        alert(`${nome} adicionado ao carrinho!\n${preco}`);
+        // Aqui você pode adicionar a lógica para atualizar o carrinho
+      });
+    });
+  </script>
+</body>
+</html>
